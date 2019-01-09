@@ -1,40 +1,42 @@
 import turtle
+from time import sleep
 
 dist= 100
-nr = 13
+nr = 5
 t = []
-g = []
 
 for i in range(nr):
   t.append(turtle.Turtle())
 
 for i in range(nr):
-  t[i].hideturtle()
   t[i].penup()
-  t[i].speed(100)
+  t[i].hideturtle()
+  t[i].speed(10)
   t[i].left(i*360/nr)
   t[i].forward(dist)
 
+g = []
 
 for i in range (nr):
   g.append(turtle.Turtle())
 
 for i in range (nr):
-  g[i].hideturtle()
   g[i].penup()
-  g[i].speed(100)
+  g[i].hideturtle()
+  g[i].speed(10)
   g[i].left(i*360/nr + 360/nr/2)
   g[i].forward(dist*2)
 
 j= turtle.Turtle()
-j.hideturtle()
 j.speed(10)
 j.penup()
-
-j.setposition(t[0])
+j.hideturtle()
+j.setposition(t[0].position())
 j.pendown()
 for i in range (nr):
-  j.goto(t[i])
-  j.goto(g[i])
+  j.goto(t[i].position())
+  j.goto(g[i].position())
 
-j.goto(t[0])
+j.goto(t[0].position())
+
+sleep(10)
