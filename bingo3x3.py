@@ -1,30 +1,47 @@
 import random
 
+n = 3
 r = []
 
-while len(r) < 9:
-  a = random.randint(1,9)
+while len(r) < n*n:
+  a = random.randint(1,n*n)
   if a not in r:
     r.append(a)
 
 b = []
-for i in range(9):
-  c= random.randint(1,9)
-  b.append(c)
-
-
-print( r[0], r[1], r[2])
-print( r[3], r[4], r[5])
-print( r[6], r[7], r[8])
+while len(b) < n*n:
+  c= random.randint(1,n*n)
+  if c not in b:
+    b.append(c)
 
 print(b)
+
+for i in range(n):
+  m = ''
+  for j in range(n):
+    m += (' %3s' % str(r[i*n+j]))
+  print(m)
+
 bingo = False
-for z in range(2):
-  if r[z] in b and r[z+3] in b and r[z+6] in b:
-    print("bingo")
-    bingo = True
+for i in range(n):
+  if not bingo:
+    gh = True
+    for j in range(n):
+      if not bingo:
+        if r[i*n+j] not in b:
+          gh = False
+    if gh:
+      bingo = True
+      print("bingo1")
 
 if not bingo:
-  for d in range(2):
-    if r[d*3] in b and r[d*3+1] in b and r[d*3+2] in b:
-      print("bingo")
+  for i in range(n):
+    if not bingo:
+      gh = True
+      for j in range(n):
+        if not bingo:
+          if r[i+j*n] not in b:
+            gh = False
+      if gh:
+        bingo = True
+        print("bingo2")
