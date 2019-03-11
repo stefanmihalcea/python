@@ -8,8 +8,10 @@ def f(x):
         x[i] = x[i+1]
         x[i+1] = c
         g = True
+  b = []
+  for k in range(len(x)):
+    if x[k] not in b:
+      b.append(x[k])
+  return(b)
 
-  return(x)
-
-print (f([4]))
-
+print (f([4,4,5,6,7,8,9,3]))
