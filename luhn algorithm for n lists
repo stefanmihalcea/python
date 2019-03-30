@@ -1,0 +1,21 @@
+a = int(input())
+b = []
+for i in range(a):
+  c = input()
+  d = []
+  for j in c:
+    d.append(j)
+  b.append(d)
+
+for i in b:
+  for j in range(int(len(i))):
+    try:
+      e = i[j]
+      eg = int(e)
+      i[j] = eg
+    except:
+      e = i[j]
+
+for i in b:
+  for j in range(int(len(i))):
+    if '?'
