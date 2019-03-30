@@ -1,0 +1,44 @@
+a = input()
+c = []
+
+for i in range(len(a)):
+  try:
+    b = a[i]
+    bg = int(b)
+    c.append(bg)
+  except:
+    b = a[i]
+    c.append(b)
+print(c)
+if '?' in c:
+  k = c[:]
+
+  for g in range(len(k)):
+      if k[g] == '?':
+        for j in range(10):
+          k = c[:]
+          k[g] = j
+          c[g] = k[g]
+          for i in range(int(len(k)/2)):
+            d = k[i*2]
+            e = d*2
+            if e >= 10:
+              f = e-9
+              k[i*2] = f
+            else:
+              k[i*2] = e
+          sum = 0
+          for num in k:
+            sum = sum +num
+          if sum % 10 ==0:
+            print(k)
+            break   
+  print(c)
+  
+
+
+
+  
+
+        
+        
