@@ -21,11 +21,11 @@ for i in b:
     k = i[:]
     for j in range(len(k)):
       if k[j] == '?':
-        for l in range(len(k)):
+        for l in range(10):
           k = i[:]
           k[j] = l
           i[j] = k[j]
-          for m in range(int(len(k)/2)):
+          for m in range(round(len(k)/2)):
             d = k[m*2]
             e = d*2
             if e >= 10:
@@ -38,5 +38,25 @@ for i in b:
             sum = sum + num
           if sum % 10 ==0:
             break
-  print(*i, sep='')
-  elif 
+    print(*i, sep='')
+  else:
+    for j in range(len(i)-1):
+      k = i[:]
+      
+      y = k[j]
+      x = k[j+1]
+      k[j] = x
+      k[j+1] = y
+      z = k[:]
+      for m in range(round(len(k)/2)):
+        d = k[m*2]
+        e = d*2
+        if e >= 10:
+          f = e-9
+          k[m*2] = f
+        else:
+          k[m*2] = e
+      n = sum(k)
+      if n % 10 ==0:
+        break
+    print(*z, sep='')
