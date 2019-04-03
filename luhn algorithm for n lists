@@ -17,5 +17,26 @@ for i in b:
       e = i[j]
 
 for i in b:
-  for j in range(int(len(i))):
-    if '?'
+  if '?' in i:
+    k = i[:]
+    for j in range(len(k)):
+      if k[j] == '?':
+        for l in range(len(k)):
+          k = i[:]
+          k[j] = l
+          i[j] = k[j]
+          for m in range(int(len(k)/2)):
+            d = k[m*2]
+            e = d*2
+            if e >= 10:
+              f = e-9
+              k[m*2] = f
+            else:
+              k[m*2] = e
+          sum = 0
+          for num in k:
+            sum = sum + num
+          if sum % 10 ==0:
+            break
+  print(*i, sep='')
+  elif 
