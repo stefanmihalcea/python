@@ -36,28 +36,43 @@ for i in b:
           n = sum(k)
           if n % 10 ==0:
             break
-    print('answer:')
-    print(*i, sep='')
+
+
   else:
+    k = i[:]
     for j in range(len(i)-1):
-      k = i[:]
+      i = k[:]
       
-      y = k[j]
-      x = k[j+1]
-      k[j] = x
-      k[j+1] = y
-      z = k[:]
-      for m in range(round(len(k)/2)):
-        d = k[m*2]
+      y = i[j]
+      x = i[j+1]
+      i[j] = x
+      i[j+1] = y
+      z = i[:]
+      for m in range(round(len(i)/2)):
+        d = i[m*2]
         e = d*2
         if e >= 10:
           f = e-9
-          k[m*2] = f
+          i[m*2] = f
         else:
-          k[m*2] = e
+          i[m*2] = e
       n = sum(k)
       if n % 10 ==0:
+        print(i)
         break
-    i = z  
-    print('answer:')
-    print(*i, sep='')
+     
+
+def convert(xy): 
+      
+    s = [str(a) for a in i] 
+      
+    res = int("".join(s)) 
+      
+    return(res) 
+  
+c = []
+for i in b:
+  a = convert(i)
+  c.append(a)
+print('answer:')
+print(*c, sep=' ')
