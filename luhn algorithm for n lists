@@ -39,27 +39,27 @@ for i in b:
 
 
   else:
-    k = i[:]
     for j in range(len(i)-1):
-      i = k[:]
+      k = i[:]
       
-      y = i[j]
-      x = i[j+1]
-      i[j] = x
-      i[j+1] = y
-      z = i[:]
-      for m in range(round(len(i)/2)):
-        d = i[m*2]
+      y = k[j]
+      x = k[j+1]
+      k[j] = x
+      k[j+1] = y
+      z = k[:]
+      for m in range(round(len(k)/2)):
+        d = k[m*2]
         e = d*2
         if e >= 10:
           f = e-9
-          i[m*2] = f
+          k[m*2] = f
         else:
-          i[m*2] = e
+          k[m*2] = e
       n = sum(k)
       if n % 10 ==0:
-        print(i)
+        b[b.index(i)] = z
         break
+        
      
 
 def convert(xy): 
