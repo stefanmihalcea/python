@@ -1,0 +1,41 @@
+a = int(input())
+c = int(input())
+d = input().split()
+for i in range(len(d)):
+  x = int(d[i])
+  d[i] = x
+
+e = []
+for i in range(d[0]):
+  f =input().split()
+  for j in range(len(f)):
+    e.append(f[j])
+
+g = []
+for i in range(d[1]):
+  f =input().split()
+  for j in range(len(f)):
+    g.append(f[j])
+
+
+A1 = []
+
+for i in range(int(len(e) / 2)):
+  A1.append(e[i*2])
+print(A1)
+
+B1 = []
+for i in range(int(len(e) / 2)):
+  B1.append(e[i*2 +1])
+print(B1)
+
+A2 = []
+for i in range(int(len(g) / 2)):
+  A2.append(g[i*2 +1])
+
+B2 = []
+for i in range(int(len(g) / 2)):
+  B2.append(g[i*2])
+
+print(A2)
+print(B2)
