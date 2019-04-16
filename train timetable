@@ -1,5 +1,6 @@
+import sys
 a = int(input())
-c = int(input())
+CA = int(input())
 d = input().split()
 for i in range(len(d)):
   x = int(d[i])
@@ -16,26 +17,121 @@ for i in range(d[1]):
   f =input().split()
   for j in range(len(f)):
     g.append(f[j])
+h = []
+for i in e:
+  k = i
+  for j in range(len(k)):
+    h.append(k[j])
+l = []
+for i in h:
+  try :
+    c = int(i)
+    l.append(c)
+  except:
+    1
+ 
+HH0 = []
+for i in range(int(len(l)/4)):
+  HH0.append(l[i*4])
+  HH0.append(l[i*4+1])
 
+MM0 = []
+for i in range(int(len(l)/4)):
+  MM0.append(l[i*4+2])
+  MM0.append(l[i*4+3])
+
+
+HH1 = []
+for i in range(0, int(len(HH0)/2)):
+  C = 10*HH0[i*2] + HH0[i*2+1]
+  HH1.append(C*60)
+
+MM1 = []
+for i in range(0, int(len(MM0)/2)):
+  C = 10*MM0[i*2] + MM0[i*2+1]
+  if C > 60:
+    print("Eine Stunde hat 60 Minuten")
+    sys.exit(1)
+  else:
+    MM1.append(C)
+
+e = []
+for i in range(len(HH1)):
+  C = HH1[i] + MM1[i]
+  e.append(C)
+
+h = []
+for i in g:
+  k = i
+  for j in range(len(k)):
+    h.append(k[j])
+l = []
+for i in h:
+  try :
+    c = int(i)
+    l.append(c)
+  except:
+    1
+ 
+HH0 = []
+for i in range(int(len(l)/4)):
+  HH0.append(l[i*4])
+  HH0.append(l[i*4+1])
+
+MM0 = []
+for i in range(int(len(l)/4)):
+  MM0.append(l[i*4+2])
+  MM0.append(l[i*4+3])
+
+
+HH1 = []
+for i in range(0, int(len(HH0)/2)):
+  C = 10*HH0[i*2] + HH0[i*2+1]
+  HH1.append(C*60)
+
+MM1 = []
+for i in range(0, int(len(MM0)/2)):
+  C = 10*MM0[i*2] + MM0[i*2+1]
+  if C > 60:
+    print("Eine Stunde hat 60 Minuten")
+    sys.exit(1)
+  else:
+    MM1.append(C)
+
+g = []
+for i in range(len(HH1)):
+  C = HH1[i] + MM1[i]
+  g.append(C)
+
+print(e)
+print(g)
 
 A1 = []
 
 for i in range(int(len(e) / 2)):
   A1.append(e[i*2])
-print(A1)
+A1.sort()
+
 
 B1 = []
 for i in range(int(len(e) / 2)):
   B1.append(e[i*2 +1])
-print(B1)
+B1.sort()
+
+
 
 A2 = []
 for i in range(int(len(g) / 2)):
   A2.append(g[i*2 +1])
-
+A2.sort()
 B2 = []
 for i in range(int(len(g) / 2)):
   B2.append(g[i*2])
+B2.sort()
 
-print(A2)
-print(B2)
+
+ZZ = 0
+DD = 0
+
+for i in B1:
+  if B2
