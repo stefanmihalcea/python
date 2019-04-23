@@ -128,36 +128,35 @@ for I in range(a):
     B2.append(g[i*2])
   B2.sort()
 
-
   ZZ = 0
-
-  R = 0
-  for i in A2:
-    for j in A1:
-      if j-i > CA:
-        ZZ = ZZ+1
-      else:
-        ZZ = ZZ+0
-
-  if ZZ > int(len(A2)):
-    R = int(len(A1)) - int(len(A2))
-  else:
-    R = int(len(A1)) - ZZ
-
-
-
+  for i in range(len(A1)):
+    for j in range(len(A2)):
+      try:
+        D = int(A1[i])
+        C = int(A2[j])
+        if C - D > CA:
+          ZZ = ZZ + 1
+          A1[i] = a
+          A2[j] = a
+          break
+        else:
+          ZZ = ZZ + 0
+      except:
+        l = l
   DD = 0
+  for i in range(len(B2)):
+    for j in range(len(B1)):
+      try:
+        D = int(B2[i])
+        C = int(B1[j])
+        if C - D > CA:
+          DD = DD + 1
+          B2[i] = a
+          B1[j] = a
+          break
+        else:
+          DD = DD + 0
+      except:
+        l = l
+  print(ZZ, DD)  
 
-  for i in B1:
-    for j in B2:
-      if j-i > CA:
-        DD = DD + 1
-      else:
-        DD = DD + 0
-  M = 0
-  if DD > int(len(B1)):
-    M = int(len(B2)) - int(len(B1))
-  else:
-    M = int(len(B2)) - DD
-
-  print(R ,   M)
